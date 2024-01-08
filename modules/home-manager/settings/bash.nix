@@ -10,8 +10,6 @@
       "extglob"
     ];
     profileExtra = ''
-      eval "$(/opt/homebrew/bin/brew shellenv)"
-
       #source ~/.bashrc
       . "$HOME/.cargo/env"
 
@@ -23,17 +21,13 @@
 
       # ------------------------------ my settings ------------------------------
       export SNIPPETS="$HOME/Repos/stowed/snippets"
-      export NVIM_APPNAME="nvim_toggle"
-      export EDITOR="nvim"
-      export VISUAL="$EDITOR"
-      export GIT_EDITOR="$EDITOR"
       export REVIEWERS="$(cat ~/Repos/stowed/reviewers | tr '\n' , | sed 's/,$//')"
       export KEG_CURRENT=~/Repos/zet
       if command -v pkg-config; then
         export CGO_CFLAGS="$(pkg-config --cflags openssl)"
         export CGO_LDFLAGS="$(pkg-config --libs openssl)"
       fi
-      export LIBRARY_PATH=$LIBRARY_PATH:/opt/homebrew/opt/openssl@3/lib/
+      # export LIBRARY_PATH=$LIBRARY_PATH:/opt/homebrew/opt/openssl@3/lib/
       export NODE_OPTIONS="--max-old-space-size=4096"
 
       export XDG_CONFIG_HOME="$HOME/.config"
@@ -44,11 +38,9 @@
       # ------------------------------ setup languages/tools ------------------------------
 
       # fzf
-      # NOTE: to configure it properly just
       export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
       export FZF_CTRL_T_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
       export FZF_DEFAULT_OPTS='--bind ctrl-u:preview-up,ctrl-d:preview-down'
-      [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
       # golang
       export GOBIN="$HOME/go/bin"
@@ -65,9 +57,9 @@
       export PATH="$HOME/Scripts:$PATH"
       export PATH="$HOME/.local/bin:$PATH"
       export PATH="$HOME/.npm-global/bin:$PATH"
-      export PATH="/opt/homebrew/opt/ruby@3.1/bin:$PATH"
-      export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-      export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+      #export PATH="/opt/homebrew/opt/ruby@3.1/bin:$PATH"
+      #export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+      #export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
       export PATH="$PATH:$HOME/.rvm/bin"
       export PATH="$HOME/Library/pnpm:$PATH"
       export PATH=$PATH:$HOME/.local/share/elixir-ls/
@@ -87,8 +79,8 @@
       export CDPATH=".:$REPOS:$WORK:$WORK/360hub:$HOME:$CONFIG"
 
       # ------------------------ bash completion ------------------------
-      [[ -r "/opt/homebrew/etc/bash_completion" ]] && . "/opt/homebrew/etc/bash_completion"
-      [[ -f "/opt/homebrew/share/bash-completion/completions/pixie" ]] && . "/opt/homebrew/share/bash-completion/completions/pixie"
+      #[[ -r "/opt/homebrew/etc/bash_completion" ]] && . "/opt/homebrew/etc/bash_completion"
+      #[[ -f "/opt/homebrew/share/bash-completion/completions/pixie" ]] && . "/opt/homebrew/share/bash-completion/completions/pixie"
 
       _have gh && . <(gh completion -s bash)
 
@@ -111,6 +103,8 @@
       # bun
       export BUN_INSTALL="$HOME/.bun"
       export PATH=$BUN_INSTALL/bin:$PATH
+
+      set -o vi
     '';
     shellAliases = {
       jira = "~/Scripts/jirarust";
@@ -120,7 +114,6 @@
       ll = "lsd -ll";
       la = "lsd -la";
       lg = "lazygit";
-      vi = "$EDITOR";
       gst = "git st";
       ga = "git a";
       gd = "git diff";
@@ -159,6 +152,8 @@
       dcu = "docker-compose up";
       dcd = "docker-compose down";
       ca = "cargo";
+      vi = "nvim";
+      vim = "nvim";
     };
   };
 }

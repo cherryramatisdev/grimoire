@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Change the gitconfig delta theme
+change-theme light

@@ -1,21 +1,21 @@
 { pkgs, ... }: {
-    system = {
-        defaults = {
-            NSGlobalDomain = {
-                AppleInterfaceStyle = "Dark";
-                AppleShowAllExtensions = true;
-            };
-            dock = {
-                autohide = true;
-            };
-            finder = {
-                AppleShowAllExtensions = true;
-                _FXShowPosixPathInTitle = true;
-            };
-        };
+  system = {
+    defaults = {
+      NSGlobalDomain = {
+        AppleInterfaceStyle = "Dark";
+        AppleShowAllExtensions = true;
+      };
+      dock = {
+        autohide = true;
+      };
+      finder = {
+        AppleShowAllExtensions = true;
+        _FXShowPosixPathInTitle = true;
+      };
     };
+  };
 
-    services.nix-daemon.enable = true;
+  services.nix-daemon.enable = true;
 
-    system.stateVersion = 4;
+  system.stateVersion = 4;
 }

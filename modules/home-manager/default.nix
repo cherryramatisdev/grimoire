@@ -1,53 +1,81 @@
 { pkgs, ... }: {
-    imports = [
-        ./settings/tmux.nix
-        ./settings/bash.nix
+  imports = [
+    ./settings/tmux.nix
+    ./settings/bash.nix
+    ./settings/nvim.nix
+    ./settings/alacritty.nix
+    ./settings/git.nix
+  ];
+
+  home = {
+    username = "cherry";
+    homeDirectory = "/Users/cherry";
+    packages = with pkgs; [
+      nixd
+      bashInteractive
+      bash-completion
+      universal-ctags
+      lsd
+      delta
+      coreutils-full
+      reattach-to-user-namespace
+      lazygit
+      tree
+      jq
+      ripgrep
+      fd
+      bat
+      perl538Packages.PerlTidy
+      go
+      gitmux
+      asdf-vm
+      discord
+      jetbrains-mono
+      fira-code
+      karabiner-elements
     ];
+  };
 
-    home = {
-        username = "cherry";
-        homeDirectory = "/Users/cherry";
-        packages = with pkgs; [
-          bash-completion
-          universal-ctags
-          lsd
-          delta
-          coreutils-full
-          reattach-to-user-namespace
-          lazygit
-          tree
-          jq
-          ripgrep
-          fd
-          bat
-          perl538Packages.PerlTidy
-          nvi
-          go
-          gitmux
-          starship
-          asdf-vm
-          raycast
-          discord
-          comic-mono
-          karabiner-elements
-        ];
+  programs = {
+    starship = {
+      enable = true;
+      settings = {
+        scan_timeout = 10;
+        add_newline = false;
+        character = {
+          success_symbol = "[🍒](bold green)";
+          error_symbol = "[🍒](bold red)";
+        };
+        custom.gh_profile = {
+          command = "gh_current_active_account";
+          symbol = "🎋 ";
+          style = "bold white";
+          when = true;
+        };
+        package = {
+          disabled = true;
+        };
+      };
     };
 
-    programs = {
-        starship = {
-            enable = true;
-        };
-
-        bat = {
-            enable = true;
-        };
-
-        fzf = {
-            enable = true;
-            enableBashIntegration = true;
-        };
-
-        git.enable = true;
+    bat = {
+      enable = true;
     };
-    home.stateVersion = "23.11";
+
+    fzf = {
+      enable = true;
+      enableBashIntegration = true;
+    };
+  };
+
+  home.file.".config/karabiner/karabiner.json".source = ./settings/karabiner.json;
+  home.file."reviewers".source = ./settings/reviewers;
+  home.file.".irbrc".source = ./settings/irbrc;
+  home.file.".exrc".source = ./settings/exrc;
+  home.file."Scripts" = {
+    source = ./settings/scripts;
+    recursive = true;
+  };
+
+  home.stateVersion = "23.11";
 }
