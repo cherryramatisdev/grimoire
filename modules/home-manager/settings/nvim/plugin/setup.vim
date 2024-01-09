@@ -26,10 +26,10 @@ set smartcase
 set smartindent
 set wildmenu
 set wildmode=full
-set foldmethod=indent
-set foldenable
-set foldlevelstart=10
-set foldnestmax=10
+" set foldmethod=indent
+" set foldenable
+" set foldlevelstart=10
+" set foldnestmax=10
 set ruler
 set splitright
 set splitbelow

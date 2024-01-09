@@ -9,5 +9,4 @@ autocmd QuickFixCmdPost    l* nested lwindow
 " -----------------------------------------------------------------------------
 "     - Key mappings -
 " -----------------------------------------------------------------------------
-nmap <C-b> :!clear;ghc -dynamic % <CR>
-nmap <Leader>x :!clear;ghc -dynamic % && ./hello<CR>
+nmap <C-b> :!clear;ghc -fno-code -dynamic % <cr>

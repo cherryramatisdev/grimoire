@@ -23,7 +23,7 @@
         type = "lua";
         config = ''
           vim.keymap.set('n', '<c-p>', ':FZF<cr>')
-          vim.keymap.set('n', '<c-f>', ':Rg')
+          vim.keymap.set('n', '<c-f>', ':Rg<space>')
         '';
       }
       {
@@ -37,39 +37,14 @@
       {
         plugin = nvim-lspconfig;
         type = "lua";
-        config = ''
-          require'lspconfig'.tsserver.setup {}
-          require'lspconfig'.nixd.setup {}
-
-          vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
-          vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-          vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-          vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
-
-          vim.api.nvim_create_autocmd('LspAttach', {
-            group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-            callback = function(ev)
-              -- Enable completion triggered by <c-x><c-o>
-              vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-              vim.bo[ev.buf].tagfunc = 'v:lua.vim.lsp.tagfunc'
-
-              local opts = { buffer = ev.buf }
-              vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-              vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-              vim.cmd [[ command! Rename :lua vim.lsp.buf.rename ]]
-              vim.cmd [[ command! Fixit :lua vim.lsp.buf.code_action ]]
-              vim.cmd [[ command! References :lua vim.lsp.buf.references ]]
-              vim.keymap.set('n', '<leader>f', function()
-                vim.lsp.buf.format { async = true }
-              end, opts)
-            end,
-          })
-        '';
+        config = builtins.readFile ./nvim/plugins/lsp.lua;
       }
       {
         plugin = (nvim-treesitter.withPlugins (p: [
+          hmts-nvim
           p.tree-sitter-vim
           p.tree-sitter-nix
+          p.tree-sitter-haskell
           p.tree-sitter-lua
           p.tree-sitter-html
           p.tree-sitter-css
@@ -83,12 +58,21 @@
         ]));
         type = "lua";
         config = ''
-          	  require'nvim-treesitter.configs'.setup {
-          	      highlight = {
-          		enable = true,
-          		additional_vim_regex_highlighting = false,
-          	      },
-          	    }
+          require'nvim-treesitter.configs'.setup {
+              highlight = {
+            enable = true,
+            additional_vim_regex_highlighting = false,
+              },
+              indent = {
+                  enable = true,
+              }
+            }
+
+            vim.cmd [[
+            set foldmethod=expr
+            set foldexpr=nvim_treesitter#foldexpr()
+            set nofoldenable
+            ]]
         '';
       }
       {

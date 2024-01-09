@@ -6,3 +6,6 @@ switch:
 
 	echo "Updating system..."
 	./result/sw/bin/darwin-rebuild switch --flake ~/Repos/grimoire/.#morgana
+
+clean:
+	nix-collect-garbage --delete-old

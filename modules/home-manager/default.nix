@@ -15,7 +15,7 @@
       bashInteractive
       bash-completion
       universal-ctags
-      lsd
+      eza
       delta
       coreutils-full
       reattach-to-user-namespace
@@ -30,8 +30,8 @@
       gitmux
       asdf-vm
       discord
-      jetbrains-mono
       fira-code
+      source-sans-pro
       karabiner-elements
     ];
   };

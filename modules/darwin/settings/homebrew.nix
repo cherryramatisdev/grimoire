@@ -4,6 +4,7 @@
     enable = true;
     caskArgs.no_quarantine = true;
     casks = [
+      "google-chrome"
       "raycast"
       "font-comic-shanns-mono-nerd-font"
       "font-symbols-only-nerd-font"

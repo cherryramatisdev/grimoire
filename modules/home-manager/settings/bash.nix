@@ -109,10 +109,10 @@
     shellAliases = {
       jira = "~/Scripts/jirarust";
       chmox = "chmod +x";
-      l = "lsd";
-      ls = "lsd";
-      ll = "lsd -ll";
-      la = "lsd -la";
+      l = "eza";
+      ls = "eza";
+      ll = "eza -ll";
+      la = "eza -la";
       lg = "lazygit";
       gst = "git st";
       ga = "git a";
