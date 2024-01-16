@@ -21,6 +21,13 @@
       vim-rhubarb
       plenary-nvim
       {
+        plugin = catppuccin-nvim;
+        type = "lua";
+        config = ''
+        vim.cmd.colorscheme "catppuccin"
+        '';
+      }
+      {
         plugin = fidget-nvim;
         type = "lua";
         config = ''
