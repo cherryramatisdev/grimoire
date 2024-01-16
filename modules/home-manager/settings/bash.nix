@@ -57,6 +57,7 @@
       export PATH="$HOME/Scripts:$PATH"
       export PATH="$HOME/.local/bin:$PATH"
       export PATH="$HOME/.npm-global/bin:$PATH"
+      export PATH="/opt/homebrew/bin:$PATH"
       #export PATH="/opt/homebrew/opt/ruby@3.1/bin:$PATH"
       #export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
       #export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
@@ -79,8 +80,7 @@
       export CDPATH=".:$REPOS:$WORK:$WORK/360hub:$HOME:$CONFIG"
 
       # ------------------------ bash completion ------------------------
-      #[[ -r "/opt/homebrew/etc/bash_completion" ]] && . "/opt/homebrew/etc/bash_completion"
-      #[[ -f "/opt/homebrew/share/bash-completion/completions/pixie" ]] && . "/opt/homebrew/share/bash-completion/completions/pixie"
+      [[ -f "/etc/profiles/per-user/cherry/share/bash-completion/completions/pixie" ]] && . "/etc/profiles/per-user/cherry/share/bash-completion/completions/pixie"
 
       _have gh && . <(gh completion -s bash)
 
@@ -131,12 +131,13 @@
       cat = "bat";
       t = "tmux";
       e = "exit";
-      clear = ''
-        printf "\e[H\e[2J"
-      '';
-      c = ''
-        printf "\e[H\e[2J"
-      '';
+      c = "clear";
+      # clear = ''
+      #   printf "\e[H\e[2J"
+      # '';
+      # c = ''
+      #   printf "\e[H\e[2J"
+      # '';
       b = "bundle";
       be = "bundle exec";
       ba = "bundle add";

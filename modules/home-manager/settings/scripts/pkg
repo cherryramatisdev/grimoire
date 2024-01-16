@@ -30,7 +30,8 @@ sub get_package_manager {
   return "none"
 }
 
-my $package_manager = get_package_manager;
+my $package_manager = "bun";
+# my $package_manager = get_package_manager;
 
 if ($package_manager eq "none") {
   say "Could not determine package manager";

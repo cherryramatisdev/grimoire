@@ -8,4 +8,5 @@ switch:
 	./result/sw/bin/darwin-rebuild switch --flake ~/Repos/grimoire/.#morgana
 
 clean:
-	nix-collect-garbage --delete-old
+	nix-collect-garbage -d
+	sudo nix-collect-garbage -d

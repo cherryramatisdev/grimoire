@@ -31,8 +31,8 @@ set wildmode=full
 " set foldlevelstart=10
 " set foldnestmax=10
 set ruler
-set splitright
-set splitbelow
+" set splitright
+" set splitbelow
 set backspace=indent,eol,start
 set nowrap
 set nohlsearch
@@ -43,8 +43,6 @@ set colorcolumn=80
 set nosmd
 set hidden
 set completeopt=menuone,noinsert
-set laststatus=3
-set statusline=%=%{FugitiveStatusline()}\ %f%m\ %y
 
 " -----------------------------------------------------------------------------
 "     - I love my blocky cursor! -
@@ -112,5 +110,5 @@ endfunction
 au FileType qf wincmd J
 nmap <leader>co :copen<CR>
 nmap <leader>cc :cclose<CR>
-nmap <leader>] :cnext<CR>
-nmap <leader>[ :cprev<CR>
+nmap ]q :cnext<CR>
+nmap [q :cprev<CR>

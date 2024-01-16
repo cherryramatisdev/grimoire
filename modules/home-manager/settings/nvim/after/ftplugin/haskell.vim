@@ -1,7 +1,8 @@
 " -----------------------------------------------------------------------------
 "     - General settings -
 " -----------------------------------------------------------------------------
-set makeprg=ghc\ -dynamic\ %
+compiler ghc
+set makeprg=cabal\ build\ -fno-code
 
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
@@ -9,4 +10,4 @@ autocmd QuickFixCmdPost    l* nested lwindow
 " -----------------------------------------------------------------------------
 "     - Key mappings -
 " -----------------------------------------------------------------------------
-nmap <C-b> :!clear;ghc -fno-code -dynamic % <cr>
+nmap <C-b> :call CompileSomeHaskell()<cr>

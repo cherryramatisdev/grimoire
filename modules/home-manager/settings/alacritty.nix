@@ -2,7 +2,7 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      font.normal.family = "Monaco";
+      font.normal.family = "ComicShannsMono Nerd Font";
       font.size = 15;
     };
   };

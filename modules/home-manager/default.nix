@@ -30,8 +30,6 @@
       gitmux
       asdf-vm
       discord
-      fira-code
-      source-sans-pro
       karabiner-elements
     ];
   };

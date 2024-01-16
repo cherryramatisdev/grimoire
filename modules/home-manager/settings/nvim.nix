@@ -14,10 +14,19 @@
     plugins = with pkgs.vimPlugins; [
       file-line
       vim-commentary
+      vim-table-mode
       vim-repeat
       vim-surround
       vim-fugitive
       vim-rhubarb
+      plenary-nvim
+      {
+        plugin = fidget-nvim;
+        type = "lua";
+        config = ''
+          require("fidget").setup {}
+        '';
+      }
       {
         plugin = fzf-vim;
         type = "lua";
@@ -47,14 +56,18 @@
           p.tree-sitter-haskell
           p.tree-sitter-lua
           p.tree-sitter-html
+          p.tree-sitter-elixir
+          p.tree-sitter-heex
           p.tree-sitter-css
           p.tree-sitter-typescript
           p.tree-sitter-javascript
+          p.tree-sitter-jsdoc
           p.tree-sitter-tsx
           p.tree-sitter-rust
           p.tree-sitter-ruby
           p.tree-sitter-vimdoc
           p.tree-sitter-query
+          p.tree-sitter-gitcommit
         ]));
         type = "lua";
         config = ''
@@ -85,6 +98,14 @@
           	  vim.g.UltiSnipsJumpBackwardTrigger="<s-tab>"
           	  vim.g.UltiSnipsEditSplit="vertical"
           	'';
+      }
+      {
+        plugin = emmet-vim;
+        type = "viml";
+        config = ''
+          let g:user_emmet_install_global = 0
+          autocmd FileType html,typescript,typescriptreact,javascriptreact,css EmmetInstall | imap <expr> <leader>e emmet#expandAbbrIntelligent("\<leader>e")
+        '';
       }
     ];
   };
