@@ -2,7 +2,7 @@
   imports = [
     ./settings/tmux.nix
     ./settings/bash.nix
-    ./settings/nvim.nix
+    ./settings/nvim/nvim.nix
     ./settings/alacritty.nix
     ./settings/git.nix
   ];
@@ -26,7 +26,6 @@
       fd
       bat
       perl538Packages.PerlTidy
-      go
       gitmux
       asdf-vm
       discord
