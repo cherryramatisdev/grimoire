@@ -1,4 +1,8 @@
-{ pkgs, ... }: {
+{ pkgs, ... }: 
+let
+    nvimFilesPath = "~/Repos/grimoire/modules/home-manager/settings/nvim/files";
+in
+{
   imports = [
     ./plugins/lsp.nix
     ./plugins/treesitter.nix
@@ -12,8 +16,8 @@
     vimdiffAlias = true;
     extraLuaConfig = /* lua */''
       vim.cmd [[
-      set runtimepath^=~/Repos/grimoire/modules/home-manager/settings/nvim/files
-      set runtimepath+=~/Repos/grimoire/modules/home-manager/settings/nvim/files/after
+      set runtimepath^=${nvimFilesPath}
+      set runtimepath+=${nvimFilesPath}/after
       ]]
     '';
     plugins = with pkgs.vimPlugins; [
@@ -45,7 +49,7 @@
         plugin = ultisnips;
         type = "lua";
         config = /* lua */''
-          	  vim.g.UltiSnipsSnippetDirectories={"~/Repos/grimoire/modules/home-manager/settings/nvim/files/UltiSnips"}
+          	  vim.g.UltiSnipsSnippetDirectories={"${nvimFilesPath}/UltiSnips"}
           	  vim.g.UltiSnipsExpandTrigger="<tab>"
           	  vim.g.UltiSnipsJumpForwardTrigger="<tab>"
           	  vim.g.UltiSnipsJumpBackwardTrigger="<s-tab>"
