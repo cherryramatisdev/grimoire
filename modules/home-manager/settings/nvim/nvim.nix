@@ -45,7 +45,7 @@
         plugin = ultisnips;
         type = "lua";
         config = /* lua */''
-          	  vim.g.UltiSnipsSnippetDirectories={"~/Repos/grimoire/modules/home-manager/settings/nvim/UltiSnips"}
+          	  vim.g.UltiSnipsSnippetDirectories={"~/Repos/grimoire/modules/home-manager/settings/nvim/files/UltiSnips"}
           	  vim.g.UltiSnipsExpandTrigger="<tab>"
           	  vim.g.UltiSnipsJumpForwardTrigger="<tab>"
           	  vim.g.UltiSnipsJumpBackwardTrigger="<s-tab>"
