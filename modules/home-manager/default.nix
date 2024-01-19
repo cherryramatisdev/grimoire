@@ -30,6 +30,7 @@
       asdf-vm
       discord
       karabiner-elements
+      gopls
     ];
   };
 

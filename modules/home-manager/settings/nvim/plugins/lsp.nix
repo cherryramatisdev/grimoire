@@ -17,6 +17,7 @@
           require'lspconfig'.tsserver.setup { capabilities = capabilities }
           require'lspconfig'.nixd.setup { capabilities = capabilities }
           require'lspconfig'.rust_analyzer.setup { capabilities = capabilities }
+          require'lspconfig'.gopls.setup { capabilities = capabilities }
           require'lspconfig'.elixirls.setup {
               capabilities = capabilities,
               cmd = { vim.fn.expand('~/.local/share/nvim/mason/packages/elixir-ls/language_server.sh') }

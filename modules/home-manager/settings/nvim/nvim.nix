@@ -22,7 +22,6 @@
       vim-table-mode
       vim-repeat
       vim-surround
-      vim-go
       vim-fugitive
       vim-rhubarb
       plenary-nvim
