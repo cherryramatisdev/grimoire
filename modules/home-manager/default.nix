@@ -11,7 +11,11 @@
     username = "cherry";
     homeDirectory = "/Users/cherry";
     packages = with pkgs; [
+# LSPs
       nixd
+      gopls
+
+# Shells & Utils
       bashInteractive
       bash-completion
       universal-ctags
@@ -28,9 +32,11 @@
       perl538Packages.PerlTidy
       gitmux
       asdf-vm
+
+# Desktop apps
       discord
       karabiner-elements
-      gopls
+      obsidian
     ];
   };
 
