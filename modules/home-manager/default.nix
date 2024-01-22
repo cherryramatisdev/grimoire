@@ -5,6 +5,7 @@
     ./settings/nvim/nvim.nix
     ./settings/alacritty.nix
     ./settings/git.nix
+    ./settings/starship.nix
   ];
 
   home = {
@@ -32,6 +33,7 @@
       perl538Packages.PerlTidy
       gitmux
       asdf-vm
+      asciiquarium
 
 # Desktop apps
       discord
@@ -41,31 +43,9 @@
   };
 
   programs = {
-    starship = {
-      enable = true;
-      settings = {
-        scan_timeout = 10;
-        add_newline = false;
-        character = {
-          success_symbol = "[🍒](bold green)";
-          error_symbol = "[🍒](bold red)";
-        };
-        custom.gh_profile = {
-          command = "gh_current_active_account";
-          symbol = "🎋 ";
-          style = "bold white";
-          when = true;
-        };
-        package = {
-          disabled = true;
-        };
-      };
-    };
-
     bat = {
       enable = true;
     };
-
     fzf = {
       enable = true;
       enableBashIntegration = true;
