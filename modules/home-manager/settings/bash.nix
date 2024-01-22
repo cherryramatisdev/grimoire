@@ -10,7 +10,6 @@
       "extglob"
     ];
     profileExtra = ''
-      #source ~/.bashrc
       . "$HOME/.cargo/env"
 
       test -r /Users/cherry/.opam/opam-init/init.sh && . /Users/cherry/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
@@ -20,6 +19,7 @@
       _have() { type "$1" &>/dev/null; }
 
       # ------------------------------ my settings ------------------------------
+      export PS1="🍒 "
       export SNIPPETS="$HOME/Repos/stowed/snippets"
       export REVIEWERS="$(cat ~/Repos/stowed/reviewers | tr '\n' , | sed 's/,$//')"
       export KEG_CURRENT=~/Repos/zet
