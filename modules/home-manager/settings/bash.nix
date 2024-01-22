@@ -21,7 +21,7 @@
       # ------------------------------ my settings ------------------------------
       export PS1="🍒 "
       export SNIPPETS="$HOME/Repos/stowed/snippets"
-      export REVIEWERS="$(cat ~/Repos/stowed/reviewers | tr '\n' , | sed 's/,$//')"
+      export REVIEWERS="$(cat ~/reviewers | tr '\n' , | sed 's/,$//')"
       export KEG_CURRENT=~/Repos/zet
       if command -v pkg-config; then
         export CGO_CFLAGS="$(pkg-config --cflags openssl)"
