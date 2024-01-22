@@ -23,7 +23,7 @@
       export SNIPPETS="$HOME/Repos/stowed/snippets"
       export REVIEWERS="$(cat ~/reviewers | tr '\n' , | sed 's/,$//')"
       export KEG_CURRENT=~/Repos/zet
-      if command -v pkg-config; then
+      if command -v pkg-config &>/dev/null; then
         export CGO_CFLAGS="$(pkg-config --cflags openssl)"
         export CGO_LDFLAGS="$(pkg-config --libs openssl)"
       fi
@@ -85,11 +85,7 @@
       _have gh && . <(gh completion -s bash)
 
       complete -C vic vic
-      # complete -C pixie pixie
-      complete -C p p # alias for pixie
       complete -C pkg pkg
-
-      eval "$(starship init bash)"
 
       # pnpm
       export PNPM_HOME="/Users/cherry/Library/pnpm"
