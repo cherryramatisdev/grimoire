@@ -31,10 +31,10 @@ in
       plenary-nvim
       {
         plugin = fzf-vim;
-        type = "lua";
-        config = /* lua */''
-          vim.keymap.set('n', '<c-p>', ':FZF<cr>')
-          vim.keymap.set('n', '<c-f>', ':Rg<space>')
+        type = "viml";
+        config = /* vim */''
+            nnoremap <c-p> :FZF<cr>
+            nnoremap <c-f> :Rg<space>
         '';
       }
       {
@@ -47,13 +47,13 @@ in
       }
       {
         plugin = ultisnips;
-        type = "lua";
-        config = /* lua */''
-          	  vim.g.UltiSnipsSnippetDirectories={"${nvimFilesPath}/UltiSnips"}
-          	  vim.g.UltiSnipsExpandTrigger="<tab>"
-          	  vim.g.UltiSnipsJumpForwardTrigger="<tab>"
-          	  vim.g.UltiSnipsJumpBackwardTrigger="<s-tab>"
-          	  vim.g.UltiSnipsEditSplit="vertical"
+        type = "viml";
+        config = /* vim */''
+          	  let g:UltiSnipsSnippetDirectories=[expand("${nvimFilesPath}/UltiSnips")]
+          	  let g:UltiSnipsExpandTrigger="<tab>"
+          	  let g:UltiSnipsJumpForwardTrigger="<tab>"
+          	  let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+          	  let g:UltiSnipsEditSplit="vertical"
           	'';
       }
       {

@@ -56,9 +56,14 @@
                       { range = 0, nargs = 0 })
 
                   vim.cmd [[ command! References :lua vim.lsp.buf.references() ]]
-                  vim.keymap.set('n', '<leader>f', function()
-                      vim.lsp.buf.format { async = true }
-                  end, opts)
+
+                  local client = vim.lsp.get_active_clients()[1]
+
+                  if client and client.server_capabilities.documentFormattingProvider then
+                      vim.keymap.set('n', '<leader>f', function()
+                          vim.lsp.buf.format { async = true }
+                      end, opts)
+                  end
               end,
           })
         '';

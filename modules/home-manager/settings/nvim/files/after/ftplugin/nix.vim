@@ -1,1 +1,1 @@
-nmap <buffer> <leader>f :!nix fmt %<Cr>
+nnoremap <buffer> <leader>f :!nix fmt %<Cr>
