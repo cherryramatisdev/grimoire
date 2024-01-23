@@ -110,6 +110,7 @@
       ll = "eza -ll";
       la = "eza -la";
       lg = "lazygit";
+      g = "git";
       gst = "git st";
       ga = "git a";
       gd = "git diff";
