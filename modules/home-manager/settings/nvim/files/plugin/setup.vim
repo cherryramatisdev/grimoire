@@ -31,8 +31,8 @@ set wildmode=full
 " set foldlevelstart=10
 " set foldnestmax=10
 set ruler
-" set splitright
-" set splitbelow
+set splitright
+set splitbelow
 set backspace=indent,eol,start
 set nowrap
 set nohlsearch
@@ -52,10 +52,10 @@ set guicursor=
 " -----------------------------------------------------------------------------
 "     - Generic key bindings -
 " -----------------------------------------------------------------------------
-nmap <C-h> :vertical resize -4<CR>
-nmap <C-l> :vertical resize +4<CR>
-nmap <C-k> :resize +4<CR>
-nmap <C-j> :resize -4<CR>
+nmap <C-h> <cmd>vertical resize -4<CR>
+nmap <C-l> <cmd>vertical resize +4<CR>
+nmap <C-k> <cmd>resize +4<CR>
+nmap <C-j> <cmd>resize -4<CR>
 nmap <Leader>} ysiw}
 
 " Terminal flapping
@@ -108,7 +108,5 @@ endfunction
 "     - Quickfix list -
 " -----------------------------------------------------------------------------
 au FileType qf wincmd J
-nmap <leader>co :copen<CR>
-nmap <leader>cc :cclose<CR>
-nmap ]q :cnext<CR>
-nmap [q :cprev<CR>
+nmap ]q <cmd>cnext<CR>
+nmap [q <cmd>cprev<CR>
