@@ -88,7 +88,7 @@
       bind -r K resize-pane -U 5
       bind -r L resize-pane -R 6
 
-      bind r source ~/.tmux.conf \; display "Reloaded"
+      bind r source ~/.config/tmux/tmux.conf \; display "Reloaded"
 
       # Search back to last prompt (mnemonic: "[b]ack"); searches for non-breaking
       # space in prompt.
