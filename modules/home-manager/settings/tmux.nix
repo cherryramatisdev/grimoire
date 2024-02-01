@@ -107,6 +107,8 @@
       bind-key g display-popup -E -d '#{pane_current_path}' -w 90% -h 90% "lazygit"
       bind-key t display-popup -E -d '#{pane_current_path}' -w 90% -h 90% "bash"
       bind-key e if-shell "$is_any_vim" "run-shell ~/Scripts/tmux_fff_vim" "display-popup -E -d '#{pane_current_path}' -w 90% -h 90% "fff""
+
+      bind-key C-f run-shell "tmux neww tmuxsessionizer"
     '';
   };
 }
