@@ -24,7 +24,7 @@ end
 
 vim.o.laststatus=3
 
-vim.api.nvim_create_autocmd({"WinEnter", "BufEnter"}, {
+vim.api.nvim_create_autocmd({"WinEnter", "BufEnter", "BufRead", "BufNew"}, {
     pattern = {"*"},
     callback = function()
         vim.o.statusline=statusline()
