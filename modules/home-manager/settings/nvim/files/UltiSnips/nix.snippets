@@ -1,0 +1,9 @@
+snippet plugin "add a neovim plugin" bwA
+      {
+        plugin = $1;
+        type = "$2";
+        config = /* $2 */''
+          $0
+        '';
+      }
+endsnippet
