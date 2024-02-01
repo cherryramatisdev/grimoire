@@ -103,6 +103,7 @@
       set -o vi
     '';
     shellAliases = {
+      dotfiles = "vi `fd . ~/Repos/grimoire | fzf`";
       jira = "~/Scripts/jirarust";
       chmox = "chmod +x";
       l = "eza";
@@ -110,7 +111,6 @@
       ll = "eza -ll";
       la = "eza -la";
       lg = "lazygit";
-      g = "git";
       gst = "git st";
       ga = "git a";
       gd = "git diff";
