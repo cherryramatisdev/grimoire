@@ -9,7 +9,6 @@
         #"orbstack"
     ];
     casks = [
-      #"warp"
       "google-chrome"
       "raycast"
       "postman"

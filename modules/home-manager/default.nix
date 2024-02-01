@@ -6,6 +6,7 @@
     ./settings/alacritty.nix
     ./settings/git.nix
     ./settings/starship.nix
+    ./settings/wezterm.nix
   ];
 
   home = {
