@@ -33,7 +33,7 @@
       set -g automatic-rename-format '#{b:pane_current_path}'
       set -g status-left ""
       set -g status-right-length 100
-      set -g status-right '#(date +"%d/%m/%Y %H:%m") #(gitmux "#{pane_current_path}")'
+      set -g status-right '[#(gh_current_active_account)] #(date +"%d/%m/%Y %H:%m") #(gitmux "#{pane_current_path}")'
 
       set -g message-style "fg=red"
 
