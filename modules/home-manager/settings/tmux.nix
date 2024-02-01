@@ -94,6 +94,8 @@
       # space in prompt.
       bind-key b copy-mode\; send-keys -X start-of-line\; send-keys -X search-backward "🍒"
 
+      bind-key Q confirm-before -p "Kill #S (y/n)?" "run-shell 'tmux switch-client -n \\\; kill-session -t \"#S\"'"
+
       bind-key Enter run-shell "~/Scripts/runproject #{pane_current_path}"
 
       bind-key -T copy-mode-vi a send-keys -X copy-pipe-and-cancel "pbcopy"\; send-keys "git add $(pbpaste)" Enter "c;gst" Enter
