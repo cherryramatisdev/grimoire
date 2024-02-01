@@ -23,6 +23,8 @@
           p.tree-sitter-vimdoc
           p.tree-sitter-query
           p.tree-sitter-gitcommit
+          p.tree-sitter-diff
+          p.tree-sitter-prisma
         ]));
         type = "lua";
         config = /* lua */''
@@ -35,7 +37,7 @@
           require'nvim-treesitter.configs'.setup {
               highlight = {
                 enable = true,
-                additional_vim_regex_highlighting = false,
+                additional_vim_regex_highlighting = {'org'},
               },
               indent = {
                   enable = true,
