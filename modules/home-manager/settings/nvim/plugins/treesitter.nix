@@ -25,6 +25,7 @@
           p.tree-sitter-gitcommit
           p.tree-sitter-diff
           p.tree-sitter-prisma
+          p.tree-sitter-markdown
         ]));
         type = "lua";
         config = /* lua */''

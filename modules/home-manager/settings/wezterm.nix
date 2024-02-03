@@ -23,9 +23,9 @@
 
       function scheme_for_appearance(appearance)
         if appearance:find 'Dark' then
-          return 'rose-pine-moon'
+          return 'Tokyo Night'
         else
-          return 'rose-pine-dawn'
+          return 'Tokyo Night Day'
         end
       end
 

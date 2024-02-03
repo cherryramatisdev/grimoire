@@ -18,6 +18,7 @@ in
     ./plugins/completion.nix
     ./plugins/colors.nix
     ./plugins/notes.nix
+    ./plugins/writing.nix
   ];
   programs.neovim = {
     enable = true;

@@ -13,11 +13,11 @@
     username = "cherry";
     homeDirectory = "/Users/cherry";
     packages = with pkgs; [
-# LSPs
+      # LSPs
       nixd
       gopls
 
-# Shells & Utils
+      # Shells & Utils
       bashInteractive
       bash-completion
       universal-ctags
@@ -36,7 +36,7 @@
       asdf-vm
       asciiquarium
 
-# Desktop apps
+      # Desktop apps
       discord
       karabiner-elements
       obsidian

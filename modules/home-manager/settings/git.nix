@@ -20,7 +20,7 @@
       '';
       reword = "commit --amend --only -v --";
       sl = ''
-      !git --paginate log --graph --pretty=format:'%C(auto)%h%Creset%C(auto)%d%Creset %s %C(magenta bold)(%cr)%Creset %C(cyan)<%aN>%Creset' --all --simplify-by-decoration
+        !git --paginate log --graph --pretty=format:'%C(auto)%h%Creset%C(auto)%d%Creset %s %C(magenta bold)(%cr)%Creset %C(cyan)<%aN>%Creset' --all --simplify-by-decoration
       '';
       st = "status";
       staged = "diff --cached --ignore-submodules=dirty";

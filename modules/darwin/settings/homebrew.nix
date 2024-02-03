@@ -4,9 +4,9 @@
     enable = true;
     caskArgs.no_quarantine = true;
     brews = [
-        "elixir"
-        "erlang"
-        #"orbstack"
+      "elixir"
+      "erlang"
+      #"orbstack"
     ];
     casks = [
       "google-chrome"

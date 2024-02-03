@@ -43,6 +43,8 @@ set colorcolumn=80
 set nosmd
 set hidden
 set completeopt=menuone,noinsert
+set autoread
+set autowrite
 
 " -----------------------------------------------------------------------------
 "     - I love my blocky cursor! -
