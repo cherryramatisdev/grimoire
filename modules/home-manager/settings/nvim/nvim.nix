@@ -17,8 +17,8 @@ in
     ./plugins/treesitter.nix
     ./plugins/completion.nix
     ./plugins/colors.nix
-    ./plugins/notes.nix
     ./plugins/writing.nix
+    ./plugins/terminal.nix
   ];
   programs.neovim = {
     enable = true;
@@ -41,16 +41,7 @@ in
       vim-rhubarb
       vim-rsi
       plenary-nvim
-      {
-        plugin = neogit;
-        type = "lua";
-        config = /* lua */''
-          local neogit = require'neogit'
-          neogit.setup()
-
-          vim.keymap.set('n', '<leader>g', neogit.open)
-        '';
-      }
+      vim-visual-multi
       {
         plugin = comment-nvim;
         type = "lua";
@@ -104,7 +95,7 @@ in
         type = "viml";
         config = /* vim */''
           let g:user_emmet_install_global = 0
-          autocmd FileType html,typescript,typescriptreact,javascriptreact,css EmmetInstall | imap <expr> <leader>e emmet#expandAbbrIntelligent("\<leader>e")
+          autocmd FileType html,typescript,typescriptreact,javascriptreact,css,heex EmmetInstall | imap <expr> <leader>e emmet#expandAbbrIntelligent("\<leader>e")
         '';
       }
       nvim-notify

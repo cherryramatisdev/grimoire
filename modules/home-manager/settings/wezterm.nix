@@ -40,24 +40,27 @@
         bottom = 0,
       }
 
-      config.disable_default_key_bindings = true
-      config.keys = {
-          { key = '=', mods = 'SUPER', action = act.IncreaseFontSize },
-          { key = '-', mods = 'SUPER', action = act.DecreaseFontSize },
-          { key = '0', mods = 'SUPER', action = act.ResetFontSize },
-          { key = 'c', mods = 'SUPER', action = act.CopyTo 'Clipboard' },
-          { key = 'f', mods = 'SUPER', action = act.Search 'CurrentSelectionOrEmptyString' },
-          { key = 'h', mods = 'SUPER', action = act.HideApplication },
-          { key = 'm', mods = 'SUPER', action = act.Hide },
-          { key = 'n', mods = 'SUPER', action = act.SpawnWindow },
-          { key = 'q', mods = 'SUPER', action = act.QuitApplication },
-          { key = 'r', mods = 'SUPER', action = act.ReloadConfiguration },
-          { key = 't', mods = 'SUPER', action = act.SpawnTab 'CurrentPaneDomain' },
-          { key = 'v', mods = 'SUPER', action = act.PasteFrom 'Clipboard' },
-          { key = 'w', mods = 'SUPER', action = act.CloseCurrentTab{ confirm = true } },
-      }
+      -- Equivalent to POSIX basename(3)
+      -- Given "/foo/bar" returns "bar"
+      -- Given "c:\\foo\\bar" returns "bar"
+      function basename(s)
+        return string.gsub(s, '(.*[/\\])(.*)', '%2')
+      end
 
-      config.enable_tab_bar = false
+      wezterm.on(
+        'format-tab-title',
+        function(tab, tabs, panes, config, hover, max_width)
+          local pane = tab.active_pane
+          local title = pane.current_working_dir.file_path
+          return {
+            { Text = ' ' .. title .. ' ' },
+          }
+        end
+      )
+
+      config.use_fancy_tab_bar = false
+      config.enable_tab_bar = true
+      config.tab_bar_at_bottom = true
 
       config.font = wezterm.font 'ComicShannsMono Nerd Font Mono'
       config.font_size = 15.0

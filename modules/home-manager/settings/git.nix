@@ -36,15 +36,23 @@
         rebase = false;
       };
       core = {
-        pager = "delta";
+        pager = "delta --features \"$(defaults read -globalDomain AppleInterfaceStyle > /dev/null 2>&1 && echo dark-mode || echo light-mode)\"";
       };
       interactive = {
-        diffFilter = "delta --color-only";
+        diffFilter = "delta --color-only --features \"$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo dark-mode || echo light-mode)\"";
       };
       delta = {
         side-by-side = true;
         navigate = true;
-        light = false;
+        light-mode = {
+          light = true;
+          syntax-theme = "GitHub";
+        };
+        dark-mode = {
+          light = false;
+          syntax-theme = "Visual Studio Dark+";
+
+        };
       };
       merge = {
         conflitstyle = "diff3";

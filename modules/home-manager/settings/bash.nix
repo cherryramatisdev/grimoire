@@ -100,6 +100,8 @@
       export BUN_INSTALL="$HOME/.bun"
       export PATH=$BUN_INSTALL/bin:$PATH
 
+      [ -f "/Users/cherry/Scripts/fzf-git" ] && source "/Users/cherry/Scripts/fzf-git" # fzf-git
+
       set -o vi
     '';
     shellAliases = {

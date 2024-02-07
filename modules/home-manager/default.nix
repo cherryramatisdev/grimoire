@@ -36,6 +36,8 @@
       asdf-vm
       asciiquarium
 
+      slides
+
       # Desktop apps
       discord
       karabiner-elements

@@ -60,13 +60,8 @@ nmap <C-k> <cmd>resize +4<CR>
 nmap <C-j> <cmd>resize -4<CR>
 nmap <Leader>} ysiw}
 
-" Terminal flapping
-tmap <C-w>k <C-\><C-n><C-w>k 
-tmap <C-w>j <C-\><C-n><C-w>j 
-tmap <C-w>h <C-\><C-n><C-w>h 
-tmap <C-w>l <C-\><C-n><C-w>l 
-
 if has("nvim")
+    au TermOpen * startinsert
     au TermOpen * exec "normal G"
 endif
 
@@ -112,3 +107,25 @@ endfunction
 au FileType qf wincmd J
 nmap ]q <cmd>cnext<CR>
 nmap [q <cmd>cprev<CR>
+
+" -----------------------------------------------------------------------------
+"   - general mappings -
+" -----------------------------------------------------------------------------
+nnoremap < <<
+nnoremap > >>
+vnoremap < <gv
+vnoremap > >gv
+
+" -----------------------------------------------------------------------------
+"   - Yank mappings -
+" -----------------------------------------------------------------------------
+nnoremap <space>y "+y
+vnoremap <space>y "+y
+nnoremap <space>Y "+y$
+
+" -----------------------------------------------------------------------------
+"   - Tab mappings -
+" -----------------------------------------------------------------------------
+nnoremap ;t <cmd>tabnew<cr>
+nnoremap <tab> gt
+nnoremap <s-tab> gT
