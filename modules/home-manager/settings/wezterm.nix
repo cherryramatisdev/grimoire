@@ -40,26 +40,8 @@
         bottom = 0,
       }
 
-      -- Equivalent to POSIX basename(3)
-      -- Given "/foo/bar" returns "bar"
-      -- Given "c:\\foo\\bar" returns "bar"
-      function basename(s)
-        return string.gsub(s, '(.*[/\\])(.*)', '%2')
-      end
-
-      wezterm.on(
-        'format-tab-title',
-        function(tab, tabs, panes, config, hover, max_width)
-          local pane = tab.active_pane
-          local title = pane.current_working_dir.file_path
-          return {
-            { Text = ' ' .. title .. ' ' },
-          }
-        end
-      )
-
       config.use_fancy_tab_bar = false
-      config.enable_tab_bar = true
+      config.enable_tab_bar = false
       config.tab_bar_at_bottom = true
 
       config.font = wezterm.font 'ComicShannsMono Nerd Font Mono'

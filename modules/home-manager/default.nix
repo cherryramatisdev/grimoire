@@ -36,6 +36,8 @@
       asdf-vm
       asciiquarium
 
+      lf
+
       slides
 
       # Desktop apps
