@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   programs.wezterm = {
-    enable = true;
+    enable = false;
     extraConfig = /* lua */''
       local wezterm = require 'wezterm'
       local act = wezterm.action
@@ -23,9 +23,9 @@
 
       function scheme_for_appearance(appearance)
         if appearance:find 'Dark' then
-          return 'Tokyo Night'
+          return 'Solarized (dark) (terminal.sexy)'
         else
-          return 'Tokyo Night Day'
+          return 'Solarized (light) (terminal.sexy)'
         end
       end
 

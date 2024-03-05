@@ -1,0 +1,14 @@
+* Tasks
+** DONE Don't even show this component when the tab is disabled
+  SCHEDULED: <2024-03-01 Fri 10:00>
+  [[file:~/Work/360Hub/hub-frontend/src/shared/components/Tab/index.tsx::{countNotification && (
+ <S.Notification>
+ <span>{countNotification}</span>
+ </S.Notification>
+ )}]]
+** DONE colocar um exemplo de codigo aqui
+DEADLINE: <2024-03-03 Sun>
+  [[file:~/Repos/my_brain/Finished Articles/What can we learn with functional languages, OOP vs Functional.org::- *1. Inability to reorder the operations or changing at all:* When we have so much dependent code is even hard to reorder or to change the code at all][To mutate or not to mutate: What is immutability]]
+** DONE finalizar o assunto aqui
+DEADLINE: <2024-03-03 Sun>
+  [[file:~/Repos/my_brain/Finished Articles/What can we learn with functional languages, OOP vs Functional.org::Immutability can be defined as a practice to avoid changing (or mutating) any variable inside our program, although depending on the language we need to make concessions][To mutate or not to mutate: What is immutability]]

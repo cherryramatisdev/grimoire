@@ -19,7 +19,12 @@
       _have() { type "$1" &>/dev/null; }
 
       # ------------------------------ my settings ------------------------------
+      # iterm2 show current cwd on tab bar
+      export PROMPT_COMMAND='echo -ne "\033]0;$PWD\007"'
+      export EDITOR="vim"
+      export GIT_EDITOR=$EDITOR
       export PS1="🍒 "
+      export PROMPT_COMMAND=""
       export SNIPPETS="$HOME/Repos/stowed/snippets"
       export REVIEWERS="$(cat ~/reviewers | tr '\n' , | sed 's/,$//')"
       export KEG_CURRENT=~/Repos/zet
@@ -53,6 +58,7 @@
        fi
 
       # ------------------------------ config PATH ------------------------------
+      export PATH="$HOME/.asdf/shims:$PATH"
       export PATH="$HOME/bin:$PATH"
       export PATH="$HOME/Scripts:$PATH"
       export PATH="$HOME/.local/bin:$PATH"
@@ -65,8 +71,8 @@
       export PATH="$HOME/Library/pnpm:$PATH"
       export PATH=$PATH:$HOME/.local/share/elixir-ls/
       export PATH=$PATH:$HOME/.ghcup/bin
-      export PATH="$PATH:$HOME/.asdf/shims"
       export PATH="$PATH:$HOME/.cabal/bin"
+      export PATH="$PATH:/Library/TeX/texbin/pdflatex"
 
       # Configure own installer scripts
       [ -f "$HOME/.asdf/asdf.sh" ] && . "$HOME/.asdf/asdf.sh"
@@ -102,7 +108,8 @@
 
       [ -f "/Users/cherry/Scripts/fzf-git" ] && source "/Users/cherry/Scripts/fzf-git" # fzf-git
 
-      set -o vi
+      [ -n "$INSIDE_EMACS" ] && set -o emacs
+      [ -z "$INSIDE_EMACS" ] && set -o vi
     '';
     shellAliases = {
       dotfiles = "vi `fd . ~/Repos/grimoire | fzf`";
@@ -131,6 +138,7 @@
       t = "tmux";
       e = "exit";
       c = "clear";
+      en = "emacsclient -nc -a ''";
       # clear = ''
       #   printf "\e[H\e[2J"
       # '';
@@ -152,8 +160,8 @@
       dcu = "docker-compose up";
       dcd = "docker-compose down";
       ca = "cargo";
-      vi = "nvim";
-      vim = "nvim";
+      vi = "vim";
+      # vim = "nvim";
     };
   };
 }

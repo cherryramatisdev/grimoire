@@ -18,6 +18,33 @@
                 },
                 "rules": [
                     {
+                        "description": "Tap Caps Lock for ESC or Hold for Control",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_control",
+                                        "lazy": true
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "escape"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Bash style Emacs key bindings (rev 2)",
                         "manipulators": [
                             {
@@ -48,6 +75,8 @@
                                             "^co\\.zeit\\.hyper$",
                                             "^io\\.alacritty$",
                                             "^org\\.alacritty$",
+                                            "^com\\.raphaelamorim\\.rio$",
+					    "^com\\.riotgames\\.LeagueofLegends\\.LeagueClientUx",
                                             "^com\\.github\\.wez\\.wezterm$",
                                             "^net\\.kovidgoyal\\.kitty$",
                                             "^org\\.vim\\.",
@@ -122,6 +151,7 @@
                                             "^co\\.zeit\\.hyper$",
                                             "^io\\.alacritty$",
                                             "^org\\.alacritty$",
+                                            "^com\\.raphaelamorim\\.rio$",
                                             "^net\\.kovidgoyal\\.kitty$",
                                             "^com\\.github\\.wez\\.wezterm$",
                                             "^org\\.vim\\.",
@@ -575,18 +605,7 @@
                 "delay_milliseconds_before_open_device": 1000
             },
             "selected": true,
-            "simple_modifications": [
-                {
-                    "from": {
-                        "key_code": "caps_lock"
-                    },
-                    "to": [
-                        {
-                            "key_code": "left_control"
-                        }
-                    ]
-                }
-            ],
+            "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "country_code": 0,
                 "indicate_sticky_modifier_keys_state": true,

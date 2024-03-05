@@ -9,7 +9,7 @@
       set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m'  # underscore colours - needs tmux-3.0
 
       # start window indexing at one instead of zero
-      set -g base-index 1 
+      set -g base-index 1
       set -g pane-base-index 1
       set -g renumber-windows on
       setw -g mode-keys vi
@@ -32,8 +32,8 @@
       set -g automatic-rename on
       set -g automatic-rename-format '#{b:pane_current_path}'
       set -g status-left ""
-      set -g status-right-length 100
-      set -g status-right '[#(gh_current_active_account)] #(date +"%d/%m/%Y %H:%m") #(gitmux "#{pane_current_path}")'
+      set -g status-right-length 70
+      set -g status-right '[#(gh_current_active_account)] #(date +"%d/%m/%Y %H:%m") #(currentbranch)'
 
       set -g message-style "fg=red"
 

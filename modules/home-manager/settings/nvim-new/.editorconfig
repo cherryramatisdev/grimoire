@@ -1,9 +1,0 @@
-# EditorConfig is awesome: https://editorconfig.org
-
-# Top-most EditorConfig file
-root = true
-
-# Indentation style
-[*]
-indent_style = space
-indent_size = 2
