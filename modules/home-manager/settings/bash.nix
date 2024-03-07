@@ -72,7 +72,7 @@
       export PATH=$PATH:$HOME/.local/share/elixir-ls/
       export PATH=$PATH:$HOME/.ghcup/bin
       export PATH="$PATH:$HOME/.cabal/bin"
-      export PATH="$PATH:/Library/TeX/texbin/pdflatex"
+      export PATH="$PATH:/Library/TeX/texbin/"
 
       # Configure own installer scripts
       [ -f "$HOME/.asdf/asdf.sh" ] && . "$HOME/.asdf/asdf.sh"

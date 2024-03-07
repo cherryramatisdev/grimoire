@@ -40,6 +40,8 @@ set wildmode=full
 set wildmenu
 set complete-=i
 set completeopt=menuone,menu,preview,popup,noinsert
+set shortmess+=c   " Shut off completion messages
+set belloff+=ctrlg " Add only if Vim beeps during completion
 " }}}
 
 " Mappings {{{
@@ -64,6 +66,16 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.local/share/vim_plugins')
+" {{{Autocompletion
+Plug 'lifepillar/vim-mucomplete'
+let g:mucomplete#enable_auto_at_startup = 1
+let g:mucomplete#chains = {}
+let g:mucomplete#chains['default'] = {
+      \              'default': ['list',  'omni',  'path',  'c-n',   'uspl'],
+      \              '.*string.*': ['uspl'],
+      \              '.*comment.*': ['uspl']
+      \            }
+" }}}
 " {{{ Fuzzy finding
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -220,7 +232,7 @@ let g:cpatch_path = '~/.vim/colors/patch'
 Plug 'srcery-colors/srcery-vim'
 Plug 'NLKNguyen/papercolor-theme'
 let g:theme_sync_disable_timer = 1
-let g:theme_sync_light_colorscheme = 'PaperColor'
+let g:theme_sync_light_colorscheme = 'EmacsLight'
 let g:theme_sync_dark_colorscheme = 'srcery'
 Plug '~/Repos/theme-sync.vim/'
 " Plug 'cherryramatisdev/theme-sync.vim'
