@@ -816,6 +816,7 @@ func_dirname	result/sw/bin/texi2dvi	/^func_dirname ()$/;"	f
 g:TermDebugging	modules/home-manager/settings/nvim/files/plugin/setup.vim	/^let g:TermDebugging = 0$/;"	v
 g:_plug_bang	modules/home-manager/settings/vimfiles/autoload/plug.vim	/^    let g:_plug_bang = (s:is_win && has('gui_running') ? 'silent ' : '').'!'.escape(cmd, '#!%')$/;"	v
 g:ackprg	modules/home-manager/settings/vimfiles/vimrc	/^  let g:ackprg = 'rg --vimgrep'$/;"	v
+g:ale_elixir_lexical_release	modules/home-manager/settings/vimfiles/vimrc	/^let g:ale_elixir_lexical_release=expand('~\/.local\/share\/lexical\/bin')$/;"	v
 g:ale_fix_on_save	modules/home-manager/settings/vimfiles/vimrc	/^let g:ale_fix_on_save = 1$/;"	v
 g:ale_fixers	modules/home-manager/settings/vimfiles/vimrc	/^let g:ale_fixers = {$/;"	v
 g:ale_linters	modules/home-manager/settings/vimfiles/vimrc	/^let g:ale_linters = {$/;"	v

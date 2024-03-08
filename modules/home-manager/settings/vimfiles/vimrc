@@ -82,6 +82,7 @@ Plug 'junegunn/fzf.vim'
 nnoremap <c-p> :FZF<cr>
 " }}}
 " {{{Syntax highlight
+Plug 'elixir-editors/vim-elixir'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'pangloss/vim-javascript'
@@ -173,24 +174,27 @@ nnoremap <leader><tab> <cmd>NERDTreeFind<cr>
 Plug 'dense-analysis/ale'
 
 let g:ale_fixers = {
-      \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-      \   'javascript': ['prettier'],
-      \   'javascriptreact': ['prettier'],
-      \   'typescript': ['prettier'],
-      \   'typescriptreact': ['prettier'],
-      \   'ruby': ['rubocop'],
-      \   'ocaml': ['ocamlformat'],
-      \   'rust': ['rustfmt']
+      \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+      \ 'javascript': ['prettier'],
+      \ 'javascriptreact': ['prettier'],
+      \ 'typescript': ['prettier'],
+      \ 'typescriptreact': ['prettier'],
+      \ 'ruby': ['rubocop'],
+      \ 'ocaml': ['ocamlformat'],
+      \ 'rust': ['rustfmt'],
+      \ 'elixir': ['mix_format']
       \}
 
+let g:ale_elixir_lexical_release=expand('~/.local/share/lexical/bin')
 let g:ale_linters = {
-      \   'javascript': ['tsserver', 'eslint'],
-      \   'javascriptreact': ['tsserver', 'eslint'],
-      \   'typescript': ['tsserver', 'eslint'],
-      \   'typescriptreact': ['tsserver', 'eslint'],
-      \   'ruby': ['sorbet'],
-      \   'ocaml': ['ocamllsp'],
-      \   'rust': ['rust_analyzer'],
+      \ 'javascript': ['tsserver', 'eslint'],
+      \ 'javascriptreact': ['tsserver', 'eslint'],
+      \ 'typescript': ['tsserver', 'eslint'],
+      \ 'typescriptreact': ['tsserver', 'eslint'],
+      \ 'ruby': ['sorbet'],
+      \ 'ocaml': ['ocamllsp'],
+      \ 'rust': ['rust_analyzer'],
+      \ 'elixir': ['lexical']
       \}
 
 let g:ale_fix_on_save = 1
