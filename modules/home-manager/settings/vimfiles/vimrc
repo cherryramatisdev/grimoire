@@ -93,6 +93,10 @@ let ruby_pseudo_operators = 1
 let ruby_space_errors = 1
 let ruby_line_continuation_error = 1
 let ruby_global_variable_error   = 1
+
+au BufRead,BufNewFile *.ex,*.exs set filetype=elixir
+au BufRead,BufNewFile *.eex,*.heex,*.leex,*.sface,*.lexs set filetype=eelixir
+au BufRead,BufNewFile mix.lock set filetype=elixir
 " }}}
 " {{{ Misc
 Plug 'bogado/file-line'
