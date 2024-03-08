@@ -830,6 +830,9 @@ g:fuzzy_binary	modules/home-manager/settings/vimfiles/vimrc	/^let g:fuzzy_binary
 g:loaded_plug	modules/home-manager/settings/vimfiles/autoload/plug.vim	/^let g:loaded_plug = 1$/;"	v
 g:mapleader	modules/home-manager/settings/nvim/files/plugin/setup.vim	/^let g:mapleader="\\\\"$/;"	v
 g:markdown_fenced_languages	modules/home-manager/settings/vimfiles/vimrc	/^let g:markdown_fenced_languages = ['ocaml', 'ruby', 'typescript', 'rust', 'bash=sh']$/;"	v
+g:mucomplete#chains	modules/home-manager/settings/vimfiles/vimrc	/^let g:mucomplete#chains = {}$/;"	v
+g:mucomplete#chains	modules/home-manager/settings/vimfiles/vimrc	/^let g:mucomplete#chains['default'] = {$/;"	v
+g:mucomplete#enable_auto_at_startup	modules/home-manager/settings/vimfiles/vimrc	/^let g:mucomplete#enable_auto_at_startup = 1$/;"	v
 g:plug_home	modules/home-manager/settings/vimfiles/autoload/plug.vim	/^  let g:plug_home = home$/;"	v
 g:plugs	modules/home-manager/settings/vimfiles/autoload/plug.vim	/^    let g:plugs[name] = spec$/;"	v
 g:plugs	modules/home-manager/settings/vimfiles/autoload/plug.vim	/^  let g:plugs = {}$/;"	v
@@ -837,9 +840,6 @@ g:plugs_order	modules/home-manager/settings/vimfiles/autoload/plug.vim	/^  let g
 g:plugs_order	modules/home-manager/settings/vimfiles/autoload/plug.vim	/^  let g:plugs_order = get(g:, 'plugs_order', keys(g:plugs))$/;"	v
 g:rustfmt_command	modules/home-manager/settings/nvim/files/after/ftplugin/rust.vim	/^let g:rustfmt_command = "rustfmt +nightly"$/;"	v
 g:termdebug_wide	modules/home-manager/settings/nvim/files/plugin/setup.vim	/^let g:termdebug_wide = 1$/;"	v
-g:theme_sync_dark_colorscheme	modules/home-manager/settings/vimfiles/vimrc	/^let g:theme_sync_dark_colorscheme = 'srcery'$/;"	v
-g:theme_sync_disable_timer	modules/home-manager/settings/vimfiles/vimrc	/^let g:theme_sync_disable_timer = 1$/;"	v
-g:theme_sync_light_colorscheme	modules/home-manager/settings/vimfiles/vimrc	/^let g:theme_sync_light_colorscheme = 'PaperColor'$/;"	v
 g:typescript_compiler_binary	modules/home-manager/settings/nvim/files/compiler/typescript.vim	/^  let g:typescript_compiler_binary = "tsc"$/;"	v
 g:typescript_compiler_options	modules/home-manager/settings/nvim/files/compiler/typescript.vim	/^  let g:typescript_compiler_options = ""$/;"	v
 g:vimwiki_folding	modules/home-manager/settings/nvim/files/after/ftplugin/vimwiki.vim	/^let g:vimwiki_folding='list'$/;"	v

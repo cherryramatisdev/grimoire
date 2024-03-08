@@ -5,7 +5,7 @@ let mapleader = ' '
 set nocompatible
 
 syntax enable
-set termguicolors
+" set termguicolors
 filetype plugin on
 
 " Settings {{{
@@ -231,10 +231,10 @@ Plug 'skywind3000/vim-color-patch'
 let g:cpatch_path = '~/.vim/colors/patch'
 Plug 'srcery-colors/srcery-vim'
 Plug 'NLKNguyen/papercolor-theme'
-let g:theme_sync_disable_timer = 1
-let g:theme_sync_light_colorscheme = 'EmacsLight'
-let g:theme_sync_dark_colorscheme = 'srcery'
-Plug '~/Repos/theme-sync.vim/'
+Plug 'chriskempson/base16-vim'
+" let g:theme_sync_disable_timer = 1
+" let g:theme_sync_light_colorscheme = 'EmacsLight'
+" let g:theme_sync_dark_colorscheme = 'srcery'
 " Plug 'cherryramatisdev/theme-sync.vim'
 " }}}
 " {{{ tpope
@@ -295,6 +295,8 @@ Plug 'cherryramatisdev/fuzzy.vim'
 let g:fuzzy_binary = 'fd'
 " }}}
 call plug#end()
+
+colorscheme base16-tomorrow
 
 " {{{ Writing / Markdown stuff
 let g:markdown_fenced_languages = ['ocaml', 'ruby', 'typescript', 'rust', 'bash=sh']
