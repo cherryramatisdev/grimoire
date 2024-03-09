@@ -278,6 +278,11 @@ xmap ia <Plug>SidewaysArgumentTextobjI
 " {{{ ruby/rails stuff
 Plug 'tpope/vim-rails'
 " }}}
+" {{{ laravel stuff
+Plug 'tpope/vim-projectionist'
+Plug 'noahfrederick/vim-composer'
+Plug 'noahfrederick/vim-laravel'
+" }}}
 " {{{ ctags integration
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'preservim/tagbar'
