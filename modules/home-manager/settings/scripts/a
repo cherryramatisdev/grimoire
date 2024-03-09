@@ -11,7 +11,7 @@ if ($ENV{COMP_LINE}) {
     my $cmd = join("", @ARGV);
     @actions = grep /^$cmd/, @actions;
 
-    map { /^$cmd/ && say $_} @actions;
+    map { /^$ARGV[1]/ && say $_} @actions;
     exit 0;
 }
 
