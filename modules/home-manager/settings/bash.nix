@@ -162,7 +162,6 @@
       dcd = "docker-compose down";
       ca = "cargo";
       vi = "vim";
-      a = "php artisan";
       # vim = "nvim";
     };
   };
