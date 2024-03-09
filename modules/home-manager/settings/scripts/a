@@ -1,10 +1,15 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env perl
 
-actions = `php artisan list --format=json | jq -r '.namespaces.[].commands[]'`
+use v5.14;
 
-if ENV['COMP_LINE']
-  actions.each_line { |action| puts action.strip if action =~ /^#{ARGV[1].gsub(':', '\:')}/ }
-  exit 0
-end
+use strict;
+use warnings;
 
-exec("php artisan #{ARGV.join(' ')}")
+my @actions = `php artisan list --format=json | jq -r '.namespaces.[].commands[]'`;
+
+if ($ENV{COMP_LINE}) {
+    map { /^$ARGV[1]/ && say $_} @actions;
+    exit 0;
+}
+
+exec("php artisan @ARGV");
