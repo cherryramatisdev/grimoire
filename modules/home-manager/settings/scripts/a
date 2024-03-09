@@ -5,7 +5,7 @@ use v5.14;
 use strict;
 use warnings;
 
-my $cmd = $ARGV[1];
+my $cmd = join("", @ARGV);
 my @actions = `php artisan list --format=json | jq -r '.namespaces.[].commands[]'`;
 
 if ($ENV{COMP_LINE}) {
