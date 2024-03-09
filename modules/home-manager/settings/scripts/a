@@ -11,7 +11,6 @@ my @actions = `php artisan list --format=json | jq -r '.namespaces.[].commands[]
 if ($ENV{COMP_LINE}) {
     @actions = grep /^$cmd/, @actions;
 
-    say "AQUI @ARGV";
     map { /^$cmd/ && say $_} @actions;
     exit 0;
 }
