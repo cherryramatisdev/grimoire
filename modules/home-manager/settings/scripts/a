@@ -11,7 +11,7 @@ if ($ENV{COMP_LINE}) {
     map {
         my $cmd = $_;
         my @parts = split(':', $cmd, 2);
-        say @parts;
+        say $cmd;
         /^$ARGV[1]/ and @parts > 1 and $parts[1] and say $cmd;
     } @actions;
     exit 0;
