@@ -99,6 +99,7 @@ au BufRead,BufNewFile *.eex,*.heex,*.leex,*.sface,*.lexs set filetype=eelixir
 au BufRead,BufNewFile mix.lock set filetype=elixir
 " }}}
 " {{{ Misc
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'bogado/file-line'
 Plug 'andlrc/CTRLGGitBlame.vim'
 Plug 'dhruvasagar/vim-dotoo'
