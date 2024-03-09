@@ -11,6 +11,7 @@ if ($ENV{COMP_LINE}) {
     my $cmd = join("", @ARGV);
 
     if ($cmd ne '') {
+        say "TESTE $cmd";
         @actions = grep /^$cmd/, @actions;
     }
 
