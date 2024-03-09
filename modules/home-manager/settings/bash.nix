@@ -93,6 +93,7 @@
 
       complete -C vic vic
       complete -C pkg pkg
+      complete -C a a
 
       # pnpm
       export PNPM_HOME="/Users/cherry/Library/pnpm"
