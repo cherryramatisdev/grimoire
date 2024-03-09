@@ -198,7 +198,8 @@ let g:ale_linters = {
       \ 'ruby': ['sorbet'],
       \ 'ocaml': ['ocamllsp'],
       \ 'rust': ['rust_analyzer'],
-      \ 'elixir': ['lexical']
+      \ 'elixir': ['lexical'],
+      \ 'php': ['intelephense']
       \}
 
 let g:ale_fix_on_save = 1
@@ -209,14 +210,16 @@ function! s:on_lsp_buffer_enabled() abort
   setlocal signcolumn=yes
   " if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
   nmap <buffer> <c-]> <cmd>ALEGoToDefinition<cr>
+  nmap <buffer> gd <cmd>ALEGoToDefinition<cr>
   nmap <buffer> <c-w>] <c-w>v<cmd>ALEGoToDefinition<cr>
   nmap <buffer> gR <cmd>ALEFindReferences -quickfix<cr>
   nmap <buffer> gI <cmd>ALEGoToImplementation<cr>
   nmap <buffer> <leader>rn <cmd>ALERename<cr>
-  nmap <buffer> [g <cmd>ALEPrevious<cr>
-  nmap <buffer> ]g <cmd>ALENext<cr>
+  nmap <buffer> [d <cmd>ALEPrevious<cr>
+  nmap <buffer> ]d <cmd>ALENext<cr>
   nmap <buffer> K <cmd>ALEHover<cr>
   nmap <buffer> ga <cmd>ALECodeAction<cr>
+  xmap <buffer> ga <cmd>ALECodeAction<cr>
 endfunction
 
 call execute('autocmd FileType '.g:ale_linters->keys()->join(',').' call s:on_lsp_buffer_enabled()')
