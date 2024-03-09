@@ -59,6 +59,7 @@
 
       # ------------------------------ config PATH ------------------------------
       export PATH="$HOME/.asdf/shims:$PATH"
+      export PATH="$HOME/.config/composer/vendor/bin:$PATH"
       export PATH="$HOME/bin:$PATH"
       export PATH="$HOME/Scripts:$PATH"
       export PATH="$HOME/.local/bin:$PATH"
