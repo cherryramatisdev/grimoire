@@ -3,8 +3,7 @@
 actions = `php artisan list --format=json | jq -r '.namespaces.[].commands[]'`
 
 if ENV['COMP_LINE']
-  p ARGV
-  actions.each_line { |action| puts action if action =~ /^#{ARGV[0]}/ }
+  actions.each_line { |action| puts action.strip if action =~ /^#{ARGV[1].gsub(':', '\:')}/ }
   exit 0
 end
 
