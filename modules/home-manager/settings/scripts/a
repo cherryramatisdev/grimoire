@@ -9,7 +9,7 @@ my $cmd = $ARGV[1];
 my @actions = `php artisan list --format=json | jq -r '.namespaces.[].commands[]'`;
 
 if ($ENV{COMP_LINE}) {
-    @actions = grep /^$cmd/ @actions;
+    @actions = grep /^$cmd/, @actions;
     map { /^$cmd/ && say $_} @actions;
     exit 0;
 }
