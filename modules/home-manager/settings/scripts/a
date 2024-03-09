@@ -5,12 +5,10 @@ use v5.14;
 use strict;
 use warnings;
 
-my $cmd = join("", @ARGV);
 my @actions = `php artisan list --format=json | jq -r '.namespaces.[].commands[]'`;
 
-say "TESTE $cmd";
-
 if ($ENV{COMP_LINE}) {
+    my $cmd = join("", @ARGV);
     @actions = grep /^$cmd/, @actions;
 
     map { /^$cmd/ && say $_} @actions;
