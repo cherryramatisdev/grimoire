@@ -8,14 +8,15 @@ use warnings;
 my @actions = `php artisan list --format=json | jq -r '.namespaces.[].commands[]'`;
 
 if ($ENV{COMP_LINE}) {
-    my $cmd = join("", @ARGV[1..$#ARGV]);
+    my @new_argv = @ARGV[1..$#ARGV];
+    my $cmd = join("", @new_argv);
 
     if ($cmd ne '') {
         say "TESTE $cmd";
         @actions = grep /^$cmd/, @actions;
     }
 
-    map { /^$ARGV[1]/ && say $_} @actions;
+    map { /^$cmd/ && say $_} @actions;
     exit 0;
 }
 
