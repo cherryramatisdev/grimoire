@@ -8,6 +8,8 @@ use warnings;
 my $cmd = join("", @ARGV);
 my @actions = `php artisan list --format=json | jq -r '.namespaces.[].commands[]'`;
 
+say "TESTE $cmd";
+
 if ($ENV{COMP_LINE}) {
     @actions = grep /^$cmd/, @actions;
 
