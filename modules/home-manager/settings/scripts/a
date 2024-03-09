@@ -10,7 +10,7 @@ my @actions = `php artisan list --format=json | jq -r '.namespaces.[].commands[]
 if ($ENV{COMP_LINE}) {
     my $cmd = join("", @ARGV);
 
-    if ($cmd != "") {
+    if ($cmd ne '') {
         @actions = grep /^$cmd/, @actions;
     }
 
