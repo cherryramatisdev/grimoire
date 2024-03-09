@@ -206,6 +206,8 @@ let g:ale_fix_on_save = 1
 let g:ale_virtualtext_cursor='current'
 
 function! s:on_lsp_buffer_enabled() abort
+  hi! ALEWarning ctermbg=NONE cterm=underline ctermfg=lightyellow
+
   setlocal omnifunc=ale#completion#OmniFunc
   setlocal signcolumn=yes
   " if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
