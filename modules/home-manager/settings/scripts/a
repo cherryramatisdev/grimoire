@@ -8,7 +8,7 @@ use warnings;
 my @actions = `php artisan list --format=json | jq -r '.namespaces.[].commands[]'`;
 
 if ($ENV{COMP_LINE}) {
-    map {/^$ARGV[1]/ and say $_} @actions;
+    map {/^$ARGV[1]/ and say $_} grep { index($_, $ARGV[1]) != -1 } @actions;
     exit 0;
 }
 
