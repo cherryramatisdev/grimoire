@@ -8,12 +8,7 @@ use warnings;
 my @actions = `php artisan list --format=json | jq -r '.namespaces.[].commands[]'`;
 
 if ($ENV{COMP_LINE}) {
-    map {
-        my $cmd = $_;
-        my @parts = split(':', $cmd, 2);
-        say $cmd;
-        /^$ARGV[1]/ and @parts > 1 and $parts[1] and say $cmd;
-    } @actions;
+    map { /^$ARGV[1]/ && say $_} @actions;
     exit 0;
 }
 
